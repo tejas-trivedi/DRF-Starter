@@ -1,7 +1,5 @@
 FROM python:3-alpine
 
-#Run python in unbuffered mode to allow for log messages to be
-#immediately dumped to the stream instead of being buffered.
 ENV PYTHONUNBUFFERED 1
 
 RUN apk update
@@ -14,7 +12,7 @@ RUN apk add --update --no-cache --virtual .tmp-build-deps \
 RUN pip install -r requirements.txt
 RUN apk del .tmp-build-deps
 
-# Copying app to docker and making it as working directory
+# Making app as the working directory and copying it to docker
 RUN mkdir /app
 WORKDIR /app
 COPY ./app /app
