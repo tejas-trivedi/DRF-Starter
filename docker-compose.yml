@@ -37,3 +37,5 @@ services:
         'docker-entrypoint.sh --appendonly yes --requirepass "$$REDIS_PASSWORD"'
     ]
     env_file: .env.sample
+    <<: *default-logging
+    restart: always
