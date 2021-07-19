@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'djoser',
 
     # DJANGO APPS
-
 ]
 
 MIDDLEWARE = [
